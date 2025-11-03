@@ -1,32 +1,32 @@
-# name: Test Project
-# on: push
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Get the code
-#         uses: actions/checkout@v5
-#       - name: Install Node
-#         uses: actions/setup-node@v6
-#         with:
-#           node-version: 18
-#       - name: Install dependencies
-#         run: npm ci
-#       - name: Run test
-#         run: npm test
-#   deploy:
-#     needs: test
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Get code
-#         uses: actions/checkout@v5
-#       - name: Install Node
-#         uses: actions/setup-node@v6
-#         with:
-#           node-version: 18
-#       - name: Install dependencies
-#         run: npm ci
-#       - name: Build Project
-#         run: npm run build
-#       - name: Depoly
-#         run: echo "Deploying...."
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v5
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test
+        run: npm test
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v5
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Depoly
+        run: echo "Deploying...."
